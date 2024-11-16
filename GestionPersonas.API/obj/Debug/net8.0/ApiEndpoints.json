@@ -1,0 +1,171 @@
+[
+  {
+    "ContainingType": "GestionPersonas.API.Controllers.MedicoController",
+    "Method": "CreateMedico",
+    "RelativePath": "api/Medico",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patient",
+        "Type": "GestionPersonas.Application.CaracteristicasMedico.Comandos.ComandoMedico.CrearComandoMedico",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "CreateMedico"
+  },
+  {
+    "ContainingType": "GestionPersonas.API.Controllers.MedicoController",
+    "Method": "GetDoctors",
+    "RelativePath": "api/Medico",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[GestionPersonas.Application.Comunes.MedicoVM, GestionPersonas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetDoctors"
+  },
+  {
+    "ContainingType": "GestionPersonas.API.Controllers.MedicoController",
+    "Method": "GetMedicoEmail",
+    "RelativePath": "api/Medico/GetMedicoEmail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GestionPersonas.Application.Comunes.MedicoVM",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GestionPersonas.API.Controllers.PacienteController",
+    "Method": "CreateMedico",
+    "RelativePath": "api/Paciente",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paciente",
+        "Type": "GestionPersonas.Application.CaracteristicasPaciente.Comandos.CrearComandoPaciente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GestionPersonas.Application.Comunes.PacienteVM",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "CreatePaciente"
+  },
+  {
+    "ContainingType": "GestionPersonas.API.Controllers.PacienteController",
+    "Method": "GetPacientes",
+    "RelativePath": "api/Paciente",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[GestionPersonas.Application.Comunes.PacienteVM, GestionPersonas.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetPacientes"
+  },
+  {
+    "ContainingType": "GestionPersonas.API.Controllers.PacienteController",
+    "Method": "GetPacienteEmail",
+    "RelativePath": "api/Paciente/GetPacienteEmail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GestionPersonas.Application.Comunes.PacienteVM",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GestionPersonas.API.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[GestionPersonas.API.WeatherForecast, GestionPersonas.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
