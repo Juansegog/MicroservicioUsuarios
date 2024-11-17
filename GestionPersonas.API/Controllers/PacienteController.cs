@@ -2,6 +2,7 @@
 using GestionPersonas.Application.CaracteristicasPaciente.Consultas.ConsultarPacienteEmail;
 using GestionPersonas.Application.CaracteristicasPaciente.Consultas.ConsultarTodosPacientes;
 using GestionPersonas.Application.Comunes;
+using GestionPersonas.Domain.ExcepcionesGenerales;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,9 +36,27 @@ namespace GestionPersonas.API.Controllers
         [HttpGet("GetPacienteEmail")]
         public async Task<ActionResult<PacienteVM>> GetPacienteEmail(string email)
         {
-            var query = new ConsultarPacienteEmail(email);
-            var respPaciente = await _mediator.Send(query);
-            return respPaciente;
+            try
+            {
+                var query = new ConsultarPacienteEmail(email);
+                var respPaciente = await _mediator.Send(query);
+                return respPaciente;
+            }
+            catch (NoHayDatosException ex)
+            {
+                return NotFound(new
+                {
+                    Message = ex.Message
+                });
+            }
+            catch (ExcepcionAccesoDatos ex)
+            {
+                return StatusCode(500, new { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "Ha ocurrido un error inesperado." });
+            }
         }
     }
 }

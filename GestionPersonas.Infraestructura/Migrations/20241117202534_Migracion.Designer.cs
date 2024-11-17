@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionPersonas.Infraestructura.Migrations
 {
     [DbContext(typeof(AplicacionDbContext))]
-    [Migration("20241115000128_GestionUsuariosMigracion")]
-    partial class GestionUsuariosMigracion
+    [Migration("20241117202534_Migracion")]
+    partial class Migracion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

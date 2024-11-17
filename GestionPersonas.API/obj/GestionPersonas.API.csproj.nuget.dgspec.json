@@ -222,9 +222,9 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
-            "FluentValidation": {
+            "FluentValidation.AspNetCore": {
               "target": "Package",
-              "version": "[11.10.0, )"
+              "version": "[11.3.0, )"
             },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -297,6 +297,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[3.6.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.0, )"

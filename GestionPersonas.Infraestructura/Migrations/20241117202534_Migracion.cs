@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GestionPersonas.Infraestructura.Migrations
 {
     /// <inheritdoc />
-    public partial class GestionUsuariosMigracion : Migration
+    public partial class Migracion : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

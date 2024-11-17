@@ -8,7 +8,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "patient",
+        "Name": "medico",
         "Type": "GestionPersonas.Application.CaracteristicasMedico.Comandos.ComandoMedico.CrearComandoMedico",
         "IsRequired": true
       }

@@ -1,5 +1,8 @@
 using AutoMapper;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using GestionPersonas.API;
+using GestionPersonas.Application.CaracteristicasPaciente.Comandos;
 using GestionPersonas.Application.Map;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +15,10 @@ IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddSingleton<GenericMapperService>();
 // Agregar servicios adicionales después de configurar los servicios principales.
+
 builder.Services.AddControllers();
+builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssemblyContaining<CrearComandoPacienteValidacion>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

@@ -2,6 +2,7 @@
 using GestionPersonas.Application.CaracteristicasMedico.Consultas.ConsultasMedico.ConsultaMedicoEmail;
 using GestionPersonas.Application.CaracteristicasMedico.Consultas.ConsultasMedico.ConsultarTodos;
 using GestionPersonas.Application.Comunes;
+using GestionPersonas.Domain.ExcepcionesGenerales;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,9 +20,9 @@ namespace GestionPersonas.API.Controllers
         }
 
         [HttpPost(Name = "CreateMedico")]
-        public async Task<ActionResult<int>> CreateMedico([FromBody] CrearComandoMedico patient)
+        public async Task<ActionResult<int>> CreateMedico([FromBody] CrearComandoMedico medico)
         {
-            var result = await _mediator.Send(patient);
+            var result = await _mediator.Send(medico);
             return result;
         }
 
@@ -36,9 +37,28 @@ namespace GestionPersonas.API.Controllers
         [HttpGet("GetMedicoEmail")]
         public async Task<ActionResult<MedicoVM>> GetMedicoEmail(string email)
         {
-            var query = new ConsultaMedicoEmail(email);
-            var respPaciente = await _mediator.Send(query);
-            return respPaciente;
+            try
+            {
+                var query = new ConsultaMedicoEmail(email);
+                var respPaciente = await _mediator.Send(query);
+                return respPaciente;
+
+            }
+            catch (NoHayDatosException ex)
+            {
+                return NotFound(new
+                {
+                    Message = ex.Message
+                });
+            }
+            catch (ExcepcionAccesoDatos ex)
+            {
+                return StatusCode(500, new { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "Ha ocurrido un error inesperado." });
+            }
         }
     }
 }
